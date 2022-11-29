@@ -1,0 +1,14 @@
+.my-input {
+  padding: 0.5em;
+  width: 70%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+li {
+  cursor: pointer;
+}
