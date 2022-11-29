@@ -34,6 +34,19 @@ createApp({
       this.todoList[index].done = !this.todoList[index].done;
     },
 
-    deleteToDo(index) {},
+    deleteToDo(index) {
+      // this.todoList.splice(index, 1);
+      const data = {
+        thisTodo: index,
+      };
+
+      axios
+        .post("server.php", data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((resp) => {
+          this.todoList = resp.data;
+        });
+    },
   },
 }).mount("#app");

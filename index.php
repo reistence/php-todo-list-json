@@ -31,7 +31,7 @@
                 <p @click="crossToDo(index)"  :class="todo.done ? 'done' : '' ">
                {{todo.text}} 
                 </p>
-                <i class="fa-solid fa-xmark"></i></li>
+                <i @click="deleteToDo(index)" class="fa-solid fa-xmark"></i></li>
        
         </ul>
     </div>
