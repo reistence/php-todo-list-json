@@ -18,7 +18,7 @@ createApp({
   methods: {
     addToDo() {
       const data = {
-        newTodo: this.newTodo,
+        newTodo: this.newTodo.text,
       };
 
       axios
@@ -33,5 +33,7 @@ createApp({
     crossToDo(index) {
       this.todoList[index].done = !this.todoList[index].done;
     },
+
+    deleteToDo(index) {},
   },
 }).mount("#app");

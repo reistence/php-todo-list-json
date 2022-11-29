@@ -13,6 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-dark">
    <div id="app" class="text-white">
@@ -22,12 +24,14 @@
 
     <div class="col-7">
          <ul class="list-group">
-            <li class="list-group-item list-group-item-dark"
-            :class="todo.done ? 'done' : '' "
-            @click="crossToDo(index)"
+            <li class="list-group-item list-group-item-dark d-flex justify-content-between"
             v-for="todo, index in todoList"
             :key="index"
-            >{{todo.text}}</li>
+            > 
+                <p @click="crossToDo(index)"  :class="todo.done ? 'done' : '' ">
+               {{todo.text}} 
+                </p>
+                <i class="fa-solid fa-xmark"></i></li>
        
         </ul>
     </div>
