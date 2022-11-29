@@ -31,7 +31,19 @@ createApp({
         });
     },
     crossToDo(index) {
-      this.todoList[index].done = !this.todoList[index].done;
+      // this.todoList[index].done = !this.todoList[index].done;
+
+      const data = {
+        thisDone: index,
+      };
+
+      axios
+        .post("server.php", data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((resp) => {
+          this.todoList = resp.data;
+        });
     },
 
     deleteToDo(index) {

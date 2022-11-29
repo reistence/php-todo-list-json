@@ -14,6 +14,13 @@ if (isset($_POST["newTodo"])) {
     file_put_contents("todo.json", json_encode($todos));
 };
 
+if(isset($_POST["thisDone"])){
+    $thisDone = intval($_POST["thisDone"]);
+    $todos[$thisDone]["done"] = !$todos[$thisDone]["done"];
+    $todos = $todos;
+    file_put_contents("todo.json", json_encode($todos));
+};
+
 
 if(isset($_POST["thisTodo"])){
     $thisTodo = intval($_POST["thisTodo"]);

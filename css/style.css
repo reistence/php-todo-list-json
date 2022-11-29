@@ -9,6 +9,23 @@
   text-decoration: line-through;
 }
 
-li {
+li > i {
+  cursor: pointer;
+  color: red;
+}
+
+li > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+li > div > i {
+  color: green;
+  cursor: default;
+}
+
+li > div > p {
   cursor: pointer;
 }

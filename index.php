@@ -28,17 +28,21 @@
             v-for="todo, index in todoList"
             :key="index"
             > 
+            <div>
+                
                 <p @click="crossToDo(index)"  :class="todo.done ? 'done' : '' ">
-               {{todo.text}} 
+                    {{todo.text}} 
                 </p>
+                <i  v-if="todo.done" class="fa-solid fa-check"></i>
+            </div>
                 <i @click="deleteToDo(index)" class="fa-solid fa-xmark"></i></li>
        
         </ul>
     </div>
     <div class="row justify-content-center mt-3 align-items-center">
         <div class="col-7 align-items-end d-flex  justify-content-between">
-            <input class="my-input" type="text" placeholder="Insert a new item" aria-label="Insert a new item" v-model="newTodo.text">
-            <button class="btn btn-danger mt-2" @click="addToDo">Save</button>
+            <input  @keyup.enter="addToDo"  class="my-input" type="text" placeholder="Insert a new item" aria-label="Insert a new item" v-model="newTodo.text">
+            <button class="btn btn-danger mt-2" @click="addToDo" >Save</button>
         </div>
     </div>
     </div>
